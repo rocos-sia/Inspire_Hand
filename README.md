@@ -1,2 +1,2 @@
 # Inspire_Hand
-基于Robotiq_Grasp因时灵巧手实验平台
+基于Ros2+Humble因时灵巧手实验平台
