@@ -12,9 +12,9 @@ def generate_launch_description():
     ld = LaunchDescription()
     pkg_share = FindPackageShare(package=package_name).find(package_name)
 
-    # rviz_file = os.path.join(pkg_share, 'rviz/diana7.rviz')
+    rviz_file = os.path.join(pkg_share, 'rviz/right_hand.rviz')
 
-    diana_xacro_path = os.path.join(pkg_share, 'urdf/inspire_hand_right.urdf')
+    diana_xacro_path = os.path.join(pkg_share, 'urdf/inspire_hand_right_mimic.urdf')
     diana7_description = xacro.process_file(diana_xacro_path).toprettyxml(indent="  ")
 
     # urdf_model_path = os.path.join(pkg_share, f'urdf/{urdf_name}')
@@ -36,7 +36,7 @@ def generate_launch_description():
         executable='rviz2',
         name='rviz2',
         output='screen',
-        # arguments=["--display-config", rviz_file]
+        arguments=["--display-config", rviz_file]
     )
     ld.add_action(robot_state_publisher_node)
     ld.add_action(joint_state_publisher_node)
